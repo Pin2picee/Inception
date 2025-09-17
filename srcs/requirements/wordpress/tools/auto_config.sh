@@ -5,10 +5,17 @@ until mysql -h mariadb -u"$SQL_USER" -p"$SQL_PASSWD" -e "SELECT 1;" >/dev/null 2
     sleep 2
 done
 
+SRC_DIR="/tmp/wordtemp"
+DEST_DIR="/var/www/wordpress"
+found=$(find /var/www/wordpress -mindepth 1 -not -name "index.nginx-debian.html" | wc -l)
+if [ "$found" -lt 1 ]; then
+    echo "$DEST_DIR est vide, copie des fichiers WordPress..."
+    cp -R "$SRC_DIR"/. "$DEST_DIR"/
+    chown -R www-data:www-data "$DEST_DIR"
+else
+    echo "$DEST_DIR n'est pas vide, copie ignorée."
+fi
 if [ ! -f /var/www/wordpress/wp-config.php ]; then
-
-    wp core download --allow-root --path='/var/www/wordpress'
-    chown -R www-data:www-data /var/www/wordpress && chmod -R 755 /var/www/wordpress
     wp config create	--allow-root \
     --dbname=$SQL_DATABASE \
     --dbuser=$SQL_USER \

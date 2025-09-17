@@ -1,0 +1,1 @@
+J'ai du telecharger wordpress a chaque lancement des containers parce que le bindmount supprimer et remetter a zero le dossier : je vais regler le probleme en telechargant wordpress lors de la creation de l'image dans un autre dossier une fois le bindmount lancer avec le containers je ferais juste une copie des fichiers 
