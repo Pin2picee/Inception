@@ -27,11 +27,16 @@ if ! wp core is-installed --allow-root --path='/var/www/wordpress'; then
     --admin_email=bendejo@gmail.com \
     --path='/var/www/wordpress'
 
-    wp user create  adil  adil.belmohammadi30@gmail.com --allow-root \
-    --role=subscriber \
-    --user_pass="$USER_PASSWD" \
-    --path='/var/www/wordpress'
+fi
 
+if ! wp user get $WPUSER --allow-root --path='/var/www/wordpress' >/dev/null 2>&1; then
+    echo "Creating adil..."
+    wp user create  adil adil.belmohammadi30@gmail.com --allow-root \
+        --role=subscriber \
+        --user_pass="$WPPASSWD" \
+        --path='/var/www/wordpress'
+else
+    echo "User adil already exists."
 fi
 echo "Wordpress launched ..."
 php-fpm8.2 -F -y /etc/php/8.2/fpm/php-fpm.conf
