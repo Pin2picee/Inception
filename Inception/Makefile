@@ -1,6 +1,14 @@
 NAME = inception
 
 $(NAME) :
+	if [ ! -d $HOME/data/mariadb ]; then \
+		@mkdir -p $HOME/data/mariadb; \
+		@echo "Volume mariadb created !";
+	fi
+        if [ ! -d $HOME/data/wordpress ]; then \
+		@mkdir -p $HOME/data/wordpress; \
+		@echo "Volume wordpress created !";
+        fi
 	docker compose -f ./srcs/docker-compose.yml up --build 
 
 all : $(NAME)
