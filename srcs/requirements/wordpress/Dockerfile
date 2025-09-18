@@ -1,7 +1,7 @@
 #wordpress
 FROM debian:bookworm
 
-RUN apt update -y && apt upgrade -y && apt-get install wget -y && apt-get install sendmail -y
+RUN apt update -y && apt upgrade -y && apt-get install wget -y
 
 #install php et ses dependances
 RUN apt-get install php8.2 php-fpm php-mysql mariadb-client -y
@@ -20,5 +20,8 @@ RUN chmod +x /usr/local/bin/auto_config.sh
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
+RUN mkdir -p /usr/sbin \
+    && printf '#!/bin/sh\nexit 0' > /usr/sbin/sendmail \
+    && chmod +x /usr/sbin/sendmail
 
 CMD ["/usr/local/bin/auto_config.sh"]

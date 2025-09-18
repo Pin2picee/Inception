@@ -46,4 +46,9 @@ else
     echo "User adil already exists."
 fi
 echo "Wordpress launched ..."
+
+#autorisation des commentaires par default
+wp option update comment_registration '1' --allow-root --path='/var/www/wordpress'
+wp post list --post_type=post --format=ids --allow-root --path='/var/www/wordpress' | xargs -I % wp post update % --comment_status=open --allow-root --path='/var/www/wordpress'
+wp plugin install wp-mail-smtp --activate --allow-root --path=/var/www/wordpress
 php-fpm8.2 -F -y /etc/php/8.2/fpm/php-fpm.conf
