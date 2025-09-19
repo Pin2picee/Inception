@@ -1,6 +1,8 @@
 #INCEPTION
 
+#LIEN TUTO
 [Voir la page complète du projet](https://tuto.grademe.fr/inception)](https://tuto.grademe.fr/inception)
+ATTENTION de prendre le tuto avec des pincettes et de le faire sois meme parce que il y a des erreurs dedans, il faut l'adapter au sujet
 
 ## Description
 **INCEPTION** est un projet avancé qui vise à simuler un environnement complexe inspiré de conteneurs ou de systèmes multitâches (selon ton projet exact).  
