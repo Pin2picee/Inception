@@ -1,7 +1,6 @@
 #INCEPTION
 
-[Voir la page complète du projet]([[https://tonpseudo.github.io/nom-du-repo/](https://tuto.grademe.fr/inception)](https://tuto.grademe.fr/inception))
-*Exemple animé du projet INCEPTION en action*
+[Voir la page complète du projet](https://tuto.grademe.fr/inception)](https://tuto.grademe.fr/inception)
 
 ## Description
 **INCEPTION** est un projet avancé qui vise à simuler un environnement complexe inspiré de conteneurs ou de systèmes multitâches (selon ton projet exact).  
