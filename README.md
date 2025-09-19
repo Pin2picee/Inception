@@ -1,6 +1,6 @@
 #INCEPTION
 
-[Voir la page complète du projet]([https://tonpseudo.github.io/nom-du-repo/](https://tuto.grademe.fr/inception))
+[Voir la page complète du projet]([[https://tonpseudo.github.io/nom-du-repo/](https://tuto.grademe.fr/inception)](https://tuto.grademe.fr/inception))
 *Exemple animé du projet INCEPTION en action*
 
 ## Description
